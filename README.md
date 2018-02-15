@@ -31,5 +31,7 @@ This project contains five services:
  ```
  $ curl -X PUT localhost:8000/reservation/user/user/parking/12345
  ```
- 
-    
+ # Next possible steps
+ - Forbid POST/PUT/PATCH for Reservation
+ - Add authorization service and secure POST/PUT/PATCH for User and Parking
+ - Add configuration service
