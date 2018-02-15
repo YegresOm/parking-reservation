@@ -1,0 +1,30 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: ui-proxy
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${random.string}
+
+zuul:
+  add-host-header: true
+  ignored-services: '*'
+  routes:
+    root:
+      path: /
+      serviceId: reservation-service
+    reservation:
+      path: /reservation/**
+      serviceId: reservation-service
+      stripPrefix: false
+    parking:
+      path: /parking/**
+      serviceId: parking-service
+      stripPrefix: false
+    user:
+      path: /user/**
+      serviceId: user-service
+      stripPrefix: false

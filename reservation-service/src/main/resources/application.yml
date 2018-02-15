@@ -1,0 +1,18 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: reservation-service
+  jackson:
+    serialization:
+       WRITE_DATES_AS_TIMESTAMPS: false
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${random.string}
+
+
+reservation:
+  amqp:
+    exchange: parking.reservations

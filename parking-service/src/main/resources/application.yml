@@ -1,0 +1,9 @@
+server:
+  port: 0
+spring:
+  application:
+    name: parking-service
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${random.string}
